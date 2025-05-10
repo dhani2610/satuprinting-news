@@ -443,7 +443,7 @@
 
 
         .hero .carousel {
-            min-height: 85vh !important;
+            min-height: 66vh !important;
         }
 
         .mobile-sider {
@@ -725,7 +725,7 @@
                                     padding: 0;
                                 }
                             </style>
-                            <div class="slider-text aos-init aos-animate" data-aos="fade-right" data-aos-delay="400"
+                            {{-- <div class="slider-text aos-init aos-animate" data-aos="fade-right" data-aos-delay="400"
                                 data-aos-duration="1000"
                                 style="top: 1%;left: 10%;font-family: 'Bebas Neue', sans-serif!important; line-height: 1;">
                                 <span style="font-size: 99px;">PRINT OUTDOOR</span>
@@ -734,6 +734,16 @@
                                 <span style="font-size: 99px; margin-left: 35%;">PRINT A3+</span>
                                 <span style="font-size: 99px; margin-left: 43%;">MERCHANDISE</span>
                                 <span style="font-size: 99px;">VINYL APPLICATOR</span>
+                            </div> --}}
+                            <div class="slider-text aos-init aos-animate" data-aos="fade-right" data-aos-delay="400" data-aos-duration="1000" style="top: 1%;left: 13%;font-family: 'Bebas Neue', sans-serif!important;line-height: 1;">
+                                <span style="font-size: 94px;/* margin-left: 14%; */">PRINT OUTDOOR</span>
+                                <span style="font-size: 76px;margin-left: 17%;">PRINT INDOOR</span>
+                                <span style="font-size: 76px;margin-left: 10%;">CETAK OFFSET</span>
+                                <span style="font-size: 76px;margin-left: 35%;">PRINT A3+</span>
+                                <span style="font-size: 75px;margin-left: 43%;">MERCHANDISE</span>
+                                <a href="http://wrappingtroops.com" style="color: white">
+                                    <span style="font-size: 76px;">VINYL APPLICATOR</span>
+                                </a>
                             </div>
                         @endif
 
@@ -750,7 +760,7 @@
                     <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
                 </a> --}}
 
-                <ol class="carousel-indicators"></ol>
+                {{-- <ol class="carousel-indicators"></ol> --}}
 
             </div>
 
@@ -830,7 +840,11 @@
                                 <span style="font-size: 25px; margin-left: 10%;">CETAK OFFSET</span>
                                 <span style="font-size: 25px; margin-left: 35%;">PRINT A3+</span>
                                 <span style="font-size: 25px; margin-left: 43%;">MERCHANDISE</span>
-                                <span style="font-size: 25px;">VINYL APPLICATOR</span>
+                                <span style="font-size: 25px;">
+                                    <a href="http://wrappingtroops.com" style="color: white">
+                                        VINYL APPLICATOR
+                                    </a>
+                                </span>
                             </div>
                         @endif
 
@@ -847,7 +861,7 @@
                     <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
                 </a> --}}
 
-                <ol class="carousel-indicators"></ol>
+                {{-- <ol class="carousel-indicators"></ol> --}}
 
             </div>
 
