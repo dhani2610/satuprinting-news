@@ -809,7 +809,40 @@
         <!-- About Section -->
 
 
+          <!-- Klien Section -->
+        <section id="portofolio" class="portofolio section" style="padding:0px!important;">
 
+            <div class="container-fluid" id="lightgallery" style="padding-left:0px!important;padding-right:0px!important">
+                <!-- DESKTOP VIEW -->
+                <div class="container-fluid gallery" id="lightgallery-desktop">
+                    <div class="row gallery-row">
+                        @foreach ($portofolio as $pt)
+                            @php
+                                $imgUrl = asset('assets/img/Portofolio/' . $pt->image);
+                            @endphp
+                            <div class="gallery-item">
+                                <a href="{{ $imgUrl }}" class="portofolio-item" data-lg-size="1600-1067">
+                                    <img src="{{ $imgUrl }}" alt="portofolio logo" class="img-fluid" />
+                                </a>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tambahkan setelah </section> -->
+        <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/lightgallery.umd.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/zoom/lg-zoom.umd.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.umd.js"></script>
+
+        <script>
+            lightGallery(document.getElementById('lightgallery'), {
+                plugins: [lgZoom, lgThumbnail],
+                speed: 500,
+                selector: 'a'
+            });
+        </script>
         
 
         <!-- Services Section -->
@@ -855,6 +888,12 @@
 
             <div class="container" data-aos="fade-up" data-aos-delay="100">
 
+                 <!-- Section Title -->
+                <div class="container section-title " data-aos="fade-up">
+                    <center>
+                        <div><span class="cat-prod">Promo Bulan ini</span></div>
+                    </center>
+                </div><!-- End Section Title -->
                 <div class="row gy-4">
                     <div id="container">
 
@@ -874,7 +913,7 @@
                                 <div class="slide-container swiper">
                                     <div class="slide-content">
                                         <div class="card-wrapper swiper-wrapper">
-                                            @foreach ($allProducts as $p)
+                                            @foreach ($allProductsDisc as $p)
                                                 @php
 
                                                     $catProd = App\Models\CategoryDocument::where(
@@ -923,47 +962,7 @@
         </section><!-- /Stats Section -->
 
 
-        <!-- Klien Section -->
-        <section id="portofolio" class="portofolio section" style="padding:0px!important;">
-            {{-- <div class="container section-title" data-aos="fade-up" style="padding-bottom: 0;font-size: 30px;">
-                <div>
-                    <center>
-                        <span class="cat-prod"><b>Portofolio</b></span>
-                    </center>
-                </div>
-            </div> --}}
-
-            <div class="container-fluid" id="lightgallery" style="padding-left:0px!important;padding-right:0px!important">
-                <!-- DESKTOP VIEW -->
-                <div class="container-fluid gallery" id="lightgallery-desktop">
-                    <div class="row gallery-row">
-                        @foreach ($portofolio as $pt)
-                            @php
-                                $imgUrl = asset('assets/img/Portofolio/' . $pt->image);
-                            @endphp
-                            <div class="gallery-item">
-                                <a href="{{ $imgUrl }}" class="portofolio-item" data-lg-size="1600-1067">
-                                    <img src="{{ $imgUrl }}" alt="portofolio logo" class="img-fluid" />
-                                </a>
-                            </div>
-                        @endforeach
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Tambahkan setelah </section> -->
-        <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/lightgallery.umd.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/zoom/lg-zoom.umd.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.umd.js"></script>
-
-        <script>
-            lightGallery(document.getElementById('lightgallery'), {
-                plugins: [lgZoom, lgThumbnail],
-                speed: 500,
-                selector: 'a'
-            });
-        </script>
+      
 
 
         <!-- Stats Section -->
