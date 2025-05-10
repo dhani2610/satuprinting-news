@@ -289,21 +289,21 @@
         }
 
         /* .card-image {
-                                                                                                                                position: relative;
-                                                                                                                                height: 150px;
-                                                                                                                                width: 150px;
-                                                                                                                                border-radius: 50%;
-                                                                                                                                background: #FFF;
-                                                                                                                                padding: 3px;
-                                                                                                                            }
+                                                                                                                                        position: relative;
+                                                                                                                                        height: 150px;
+                                                                                                                                        width: 150px;
+                                                                                                                                        border-radius: 50%;
+                                                                                                                                        background: #FFF;
+                                                                                                                                        padding: 3px;
+                                                                                                                                    }
 
-                                                                                                                            .card-image .card-img {
-                                                                                                                                height: 100%;
-                                                                                                                                width: 100%;
-                                                                                                                                object-fit: cover;
-                                                                                                                                border-radius: 50%;
-                                                                                                                                border: 4px solid #4070F4;
-                                                                                                                            } */
+                                                                                                                                    .card-image .card-img {
+                                                                                                                                        height: 100%;
+                                                                                                                                        width: 100%;
+                                                                                                                                        object-fit: cover;
+                                                                                                                                        border-radius: 50%;
+                                                                                                                                        border: 4px solid #4070F4;
+                                                                                                                                    } */
 
         .name {
             font-size: 18px;
@@ -713,15 +713,27 @@
                                         1px -1px 0 #fff,
                                         -1px -1px 0 #fff;
                                 }
+
+                                .slider-text {
+                                    line-height: 1;
+                                    /* atau coba 0.9 jika masih terlalu renggang */
+                                }
+
+                                .slider-text span {
+                                    display: block;
+                                    margin: 0;
+                                    padding: 0;
+                                }
                             </style>
-                            <div class="slider-text" data-aos="fade-right" data-aos-delay="400" data-aos-duration="1000"
-                                style="top: 7%;left: 10%;">
-                                <span style="font-size: 65px;!important">PRINT OUTDOOR</span> <br>
-                                <span style="font-size: 65px;!important">PRINT INDOOR</span> <br>
-                                <span style="font-size: 65px;!important">CETAK OFFSET</span> <br>
-                                <span style="font-size: 65px;!important">PRINT A3+</span> <br>
-                                <span style="font-size: 65px;!important">MERCHANDISE</span> <br>
-                                <span style="font-size: 65px;!important">VINYL APPLICATOR</span> <br>
+                            <div class="slider-text aos-init aos-animate" data-aos="fade-right" data-aos-delay="400"
+                                data-aos-duration="1000"
+                                style="top: 7%;left: 10%;font-family: 'Bebas Neue', sans-serif!important; line-height: 1;">
+                                <span style="font-size: 134px;">PRINT OUTDOOR</span>
+                                <span style="font-size: 99px; margin-left: 22%;">PRINT INDOOR</span>
+                                <span style="font-size: 99px; margin-left: 10%;">CETAK OFFSET</span>
+                                <span style="font-size: 99px; margin-left: 35%;">PRINT A3+</span>
+                                <span style="font-size: 99px; margin-left: 43%;">MERCHANDISE</span>
+                                <span style="font-size: 99px;">VINYL APPLICATOR</span>
                             </div>
                         @endif
 
@@ -730,13 +742,13 @@
                 @endforeach
 
 
-                <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
+                {{-- <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
                 </a>
 
                 <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
                     <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
-                </a>
+                </a> --}}
 
                 <ol class="carousel-indicators"></ol>
 
@@ -766,7 +778,7 @@
                                 style="
                                    position: absolute;
                                         top: 56%;
-    left: 24vh;
+                                    left: 24vh;
                                     transform: translateY(-50%);
                                     z-index: 10;
                                     max-width: 50%;
@@ -775,7 +787,7 @@
 
                         @if (!empty($s->right_image))
                             <!-- RIGHT IMAGE -->
-                            <style>
+                             <style>
                                 .slider-text {
                                     position: absolute;
                                     top: 50%;
@@ -798,15 +810,27 @@
                                         1px -1px 0 #fff,
                                         -1px -1px 0 #fff;
                                 }
+
+                                .slider-text {
+                                    line-height: 1;
+                                    /* atau coba 0.9 jika masih terlalu renggang */
+                                }
+
+                                .slider-text span {
+                                    display: block;
+                                    margin: 0;
+                                    padding: 0;
+                                }
                             </style>
-                            <div class="slider-text" data-aos="fade-right" data-aos-delay="400" data-aos-duration="1000"
-                                style="top: 10%;left: 10%;">
-                                <span style="font-size: 20px;!important">PRINT OUTDOOR</span> <br>
-                                <span style="font-size: 20px;!important">PRINT INDOOR</span> <br>
-                                <span style="font-size: 20px;!important">CETAK OFFSET</span> <br>
-                                <span style="font-size: 20px;!important">PRINT A3+</span> <br>
-                                <span style="font-size: 20px;!important">MERCHANDISE</span> <br>
-                                <span style="font-size: 20px;!important">VINYL APPLICATOR</span> <br>
+                            <div class="slider-text aos-init aos-animate" data-aos="fade-right" data-aos-delay="400"
+                                data-aos-duration="1000"
+                                style="top: 15%;left: 10%;font-family: 'Bebas Neue', sans-serif!important; line-height: 1;">
+                                <span style="font-size: 20px;">PRINT OUTDOOR</span>
+                                <span style="font-size: 20px; margin-left: 22%;">PRINT INDOOR</span>
+                                <span style="font-size: 20px; margin-left: 10%;">CETAK OFFSET</span>
+                                <span style="font-size: 20px; margin-left: 35%;">PRINT A3+</span>
+                                <span style="font-size: 20px; margin-left: 43%;">MERCHANDISE</span>
+                                <span style="font-size: 20px;">VINYL APPLICATOR</span>
                             </div>
                         @endif
 
@@ -815,13 +839,13 @@
                 @endforeach
 
 
-                <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
+                {{-- <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
                 </a>
 
                 <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
                     <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
-                </a>
+                </a> --}}
 
                 <ol class="carousel-indicators"></ol>
 
@@ -1092,7 +1116,7 @@
 
     <script>
         var swiper = new Swiper(".slide-content", {
-            slidesPerView: 5,
+            slidesPerView: 6,
             spaceBetween: 10,
             loop: false,
             centerSlide: 'true',
@@ -1116,7 +1140,7 @@
                     slidesPerView: 2,
                 },
                 950: {
-                    slidesPerView: 5,
+                    slidesPerView: 6,
                 },
             },
         });

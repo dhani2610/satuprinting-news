@@ -46,7 +46,7 @@
 
 <style>
     *{
-        font-family: "Bebas Neue", sans-serif!mportant;
+        /* font-family: "Bebas Neue", sans-serif!mportant; */
         /* font-weight: 400; */
         font-style: normal;
     }
