@@ -21,6 +21,9 @@
       display: inline-block;
       font-size: 17px!important;
     }
+    .btn-getstarted{
+        display: none
+    }
 }
 
 
@@ -44,6 +47,29 @@
     max-height: 45px!important;
     margin-right: 8px;
 }
+
+.header .btn-getstarted, .header .btn-getstarted:focus {
+    color: black;
+    background: white;
+    font-size: 20px;
+    padding: 8px 25px;
+    margin: 0 0 0 30px;
+    border-radius: 35px;
+    transition: 0.3s;
+    font-weight: 600;
+    border: 2px solid black;
+}
+.header .btn-getstarted, .header .btn-getstarted:hover {
+    color: black;
+    background: white;
+    font-size: 20px;
+    padding: 8px 25px;
+    margin: 0 0 0 30px;
+    border-radius: 35px;
+    transition: 0.3s;
+    font-weight: 600;
+    border: 2px solid black;
+}
 </style>
 
 
@@ -61,11 +87,11 @@
               <a href="#" target="_blank"><i style="font-size: 25px !important;" class="bi bi-facebook"></i></a>
               <a href="https://www.instagram.com/satuprinting.id?igsh=dmxlczlyamlyMWg1" target="_blank"><i style="font-size: 25px !important;" class="bi bi-instagram"></i></a>
               <a href="https://youtube.com/@satuprintingindonesia?si=TFJI704YpKeVO_lc" target="_blank"><i style="font-size: 25px !important;" class="bi bi-youtube"></i></a>
+              <a class="btn-getstarted" href="#kategori">DAFTAR HARGA</a>
           </div>
             <i class="mobile-nav-toggle d-xl-none bi bi-list d-none"></i>
         </nav>
 
-        {{-- <a class="btn-getstarted" href="https://wa.me/6282210008380">Contact</a> --}}
 
     </div>
 </header>
