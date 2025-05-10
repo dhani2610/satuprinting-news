@@ -443,7 +443,7 @@
 
 
         .hero .carousel {
-            min-height: 100vh !important;
+            min-height: 85vh !important;
         }
 
         .mobile-sider {
@@ -681,7 +681,7 @@
                                 style="
                                    position: absolute;
                                     top: 50%;
-                                    left: 100vh;
+                                    left: 106vh;
                                     transform: translateY(-50%);
                                     z-index: 10;
                                     max-width: 50%;
@@ -727,8 +727,8 @@
                             </style>
                             <div class="slider-text aos-init aos-animate" data-aos="fade-right" data-aos-delay="400"
                                 data-aos-duration="1000"
-                                style="top: 7%;left: 10%;font-family: 'Bebas Neue', sans-serif!important; line-height: 1;">
-                                <span style="font-size: 134px;">PRINT OUTDOOR</span>
+                                style="top: 1%;left: 10%;font-family: 'Bebas Neue', sans-serif!important; line-height: 1;">
+                                <span style="font-size: 99px;">PRINT OUTDOOR</span>
                                 <span style="font-size: 99px; margin-left: 22%;">PRINT INDOOR</span>
                                 <span style="font-size: 99px; margin-left: 10%;">CETAK OFFSET</span>
                                 <span style="font-size: 99px; margin-left: 35%;">PRINT A3+</span>
