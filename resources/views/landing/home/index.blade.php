@@ -714,13 +714,13 @@
                                         -1px -1px 0 #fff;
                                 }
                             </style>
-                            <div class="slider-text" data-aos="fade-right" data-aos-delay="400" data-aos-duration="1000">
-                                <span>PRINT OUTDOOR</span> <br>
-                                <span>PRINT INDOOR</span> <br>
-                                <span>CETAK OFFSET</span> <br>
-                                <span>PRINT A3+</span> <br>
-                                <span>MERCHANDISE</span> <br>
-                                <span>VINYL APPLICATOR</span> <br>
+                            <div class="slider-text" data-aos="fade-right" data-aos-delay="400" data-aos-duration="1000" style="top: 7%;left: 10%;">
+                                <span style="font-size: 65px;!important" >PRINT OUTDOOR</span> <br>
+                                <span style="font-size: 65px;!important" >PRINT INDOOR</span> <br>
+                                <span style="font-size: 65px;!important" >CETAK OFFSET</span> <br>
+                                <span style="font-size: 65px;!important" >PRINT A3+</span> <br>
+                                <span style="font-size: 65px;!important" >MERCHANDISE</span> <br>
+                                <span style="font-size: 65px;!important" >VINYL APPLICATOR</span> <br>
                             </div>
                         @endif
 
@@ -807,6 +807,121 @@
         <!-- /Hero Section -->
 
         <!-- About Section -->
+
+
+
+        
+
+        <!-- Services Section -->
+        <section id="services" class="services section">
+
+            <!-- Section Title -->
+            <div class="container section-title " data-aos="fade-up">
+                <center>
+                    <div><span class="cat-prod">Kategori Produk</span></div>
+                </center>
+            </div><!-- End Section Title -->
+
+            <div class="container">
+
+                <div class="row gy-4">
+                    @foreach ($category as $cat)
+                        <div class="col-lg-3 col-md-2 col-3" data-aos="fade-up" data-aos-delay="100">
+                            <div class="service-item position-relative" style="border: none">
+                                <img src="{{ asset('assets/img/category/' . $cat['image']) }}" class="img-fluid img-cat"
+                                    style="max-width: 50%" alt="">
+                                @if ($cat['category'] == 'Pasang Stiker')
+                                    <a href="https://wrappingtroops.com" target="_blank" class="stretched-link"
+                                        style="color: black">
+                                    @else
+                                        <a href="{{ route('category-landing') }}?category={{ $cat['id'] }}"
+                                            class="stretched-link" style="color: black">
+                                @endif
+                                <p class="fs-6 fs-md-5 fs-lg-4 text-cat">
+                                    <strong>{{ $cat['category'] }}</strong>
+                                </p>
+                                </a>
+                            </div>
+                        </div><!-- End Service Item -->
+                    @endforeach
+                </div>
+
+
+            </div>
+
+        </section><!-- /Services Section -->
+
+        <section id="stats" class="stats section" style="background: linear-gradient(to bottom, #FCE15A, #F7971E);">
+
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+                <div class="row gy-4">
+                    <div id="container">
+
+                        <div class="row">
+                            {{-- <div class="col-lg-3">
+                                <h5 style="color: bronze">
+                                    <b>
+                                        Promo Bulan ini
+                                    </b>
+                                </h5>
+
+                                <p style="color: burlywood">Nikmati Promosinya</p>
+
+                                <img src="{{ asset('assets/img/promo/' . $set->promo) }}" class="img-fluid">
+                            </div> --}}
+                            <div class="col-lg-12">
+                                <div class="slide-container swiper">
+                                    <div class="slide-content">
+                                        <div class="card-wrapper swiper-wrapper">
+                                            @foreach ($allProducts as $p)
+                                                @php
+
+                                                    $catProd = App\Models\CategoryDocument::where(
+                                                        'id',
+                                                        $p->id_category,
+                                                    )->first();
+
+                                                @endphp
+                                                <div class="card swiper-slide" style="">
+                                                    <div class="product-grid">
+                                                        <div class="product-image">
+                                                            <a href="{{ route('detail-prod', $p->id) }}" class="image">
+                                                                <img class="pic-1"
+                                                                    src="{{ asset('assets/img/product/' . $p->image) }}">
+                                                                <img class="pic-2"
+                                                                    src="{{ asset('assets/img/product/' . $p->image) }}">
+                                                            </a>
+                                                        </div>
+                                                        <div class="product-content">
+                                                            <h3 class="title">
+                                                                <a href="#"
+                                                                    style="color: #F7941D!important">{{ $p->service }}</a>
+                                                            </h3>
+                                                            <div class="price">From @currency($p->price)</div>
+                                                            <a href="{{ route('detail-prod', $p->id) }}"
+                                                                class="add-cart">
+                                                                Lihat Detail
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                    </div>
+
+                                    <div class="swiper-button-next swiper-navBtn"></div>
+                                    <div class="swiper-button-prev swiper-navBtn"></div>
+                                    <div class="swiper-pagination"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section><!-- /Stats Section -->
+
 
         <!-- Klien Section -->
         <section id="portofolio" class="portofolio section" style="padding:0px!important;">
@@ -907,118 +1022,6 @@
             </div>
         </section>
 
-
-
-        <!-- Services Section -->
-        <section id="services" class="services section">
-
-            <!-- Section Title -->
-            <div class="container section-title " data-aos="fade-up">
-                <center>
-                    <div><span class="cat-prod">Kategori Produk</span></div>
-                </center>
-            </div><!-- End Section Title -->
-
-            <div class="container">
-
-                <div class="row gy-4">
-                    @foreach ($category as $cat)
-                        <div class="col-lg-3 col-md-2 col-3" data-aos="fade-up" data-aos-delay="100">
-                            <div class="service-item position-relative" style="border: none">
-                                <img src="{{ asset('assets/img/category/' . $cat['image']) }}" class="img-fluid img-cat"
-                                    style="max-width: 50%" alt="">
-                                @if ($cat['category'] == 'Pasang Stiker')
-                                    <a href="https://wrappingtroops.com" target="_blank" class="stretched-link"
-                                        style="color: black">
-                                    @else
-                                        <a href="{{ route('category-landing') }}?category={{ $cat['id'] }}"
-                                            class="stretched-link" style="color: black">
-                                @endif
-                                <p class="fs-6 fs-md-5 fs-lg-4 text-cat">
-                                    <strong>{{ $cat['category'] }}</strong>
-                                </p>
-                                </a>
-                            </div>
-                        </div><!-- End Service Item -->
-                    @endforeach
-                </div>
-
-
-            </div>
-
-        </section><!-- /Services Section -->
-
-        <!-- Stats Section -->
-        <section id="stats" class="stats section" style="background: linear-gradient(to bottom, #FCE15A, #F7971E);">
-
-            <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-                <div class="row gy-4">
-                    <div id="container">
-
-                        <div class="row">
-                            {{-- <div class="col-lg-3">
-                                <h5 style="color: bronze">
-                                    <b>
-                                        Promo Bulan ini
-                                    </b>
-                                </h5>
-
-                                <p style="color: burlywood">Nikmati Promosinya</p>
-
-                                <img src="{{ asset('assets/img/promo/' . $set->promo) }}" class="img-fluid">
-                            </div> --}}
-                            <div class="col-lg-12">
-                                <div class="slide-container swiper">
-                                    <div class="slide-content">
-                                        <div class="card-wrapper swiper-wrapper">
-                                            @foreach ($allProducts as $p)
-                                                @php
-
-                                                    $catProd = App\Models\CategoryDocument::where(
-                                                        'id',
-                                                        $p->id_category,
-                                                    )->first();
-
-                                                @endphp
-                                                <div class="card swiper-slide" style="">
-                                                    <div class="product-grid">
-                                                        <div class="product-image">
-                                                            <a href="{{ route('detail-prod', $p->id) }}" class="image">
-                                                                <img class="pic-1"
-                                                                    src="{{ asset('assets/img/product/' . $p->image) }}">
-                                                                <img class="pic-2"
-                                                                    src="{{ asset('assets/img/product/' . $p->image) }}">
-                                                            </a>
-                                                        </div>
-                                                        <div class="product-content">
-                                                            <h3 class="title">
-                                                                <a href="#"
-                                                                    style="color: #F7941D!important">{{ $p->service }}</a>
-                                                            </h3>
-                                                            <div class="price">From @currency($p->price)</div>
-                                                            <a href="{{ route('detail-prod', $p->id) }}"
-                                                                class="add-cart">
-                                                                Lihat Detail
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            @endforeach
-                                        </div>
-                                    </div>
-
-                                    <div class="swiper-button-next swiper-navBtn"></div>
-                                    <div class="swiper-button-prev swiper-navBtn"></div>
-                                    <div class="swiper-pagination"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </section><!-- /Stats Section -->
 
         <!-- Testimonials Section -->
 
