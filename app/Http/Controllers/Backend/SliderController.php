@@ -33,13 +33,26 @@ class SliderController extends Controller
                 $image->move($destinationPath, $name);
                 $data->image = $name;
             }
+            if ($request->hasFile('left_image')) {
+                $image = $request->file('left_image');
+                $name = time() . '.' . $image->getClientOriginalExtension();
+                $destinationPath = public_path('assets/img/slider/');
+                $image->move($destinationPath, $name);
+                $data->left_image = $name;
+            }
+            if ($request->hasFile('right_image')) {
+                $image = $request->file('right_image');
+                $name = time() . '.' . $image->getClientOriginalExtension();
+                $destinationPath = public_path('assets/img/slider/');
+                $image->move($destinationPath, $name);
+                $data->right_image = $name;
+            }
             $data->save();
 
             session()->flash('success', 'Data has been created !!');
             return redirect()->back();
 
         } catch (\Throwable $th) {
-            dd($th->getMessage());
             session()->flash('failed', 'Data has failed created !!');
             return redirect()->back();
         }
@@ -60,6 +73,20 @@ class SliderController extends Controller
                 $destinationPath = public_path('assets/img/slider/');
                 $image->move($destinationPath, $name);
                 $data->image = $name;
+            }
+             if ($request->hasFile('left_image')) {
+                $image = $request->file('left_image');
+                $name = time() . '.' . $image->getClientOriginalExtension();
+                $destinationPath = public_path('assets/img/slider/');
+                $image->move($destinationPath, $name);
+                $data->left_image = $name;
+            }
+            if ($request->hasFile('right_image')) {
+                $image = $request->file('right_image');
+                $name = time() . '.' . $image->getClientOriginalExtension();
+                $destinationPath = public_path('assets/img/slider/');
+                $image->move($destinationPath, $name);
+                $data->right_image = $name;
             }
             $data->save();
 

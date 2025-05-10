@@ -289,21 +289,21 @@
         }
 
         /* .card-image {
-                                                                    position: relative;
-                                                                    height: 150px;
-                                                                    width: 150px;
-                                                                    border-radius: 50%;
-                                                                    background: #FFF;
-                                                                    padding: 3px;
-                                                                }
+                                                                                        position: relative;
+                                                                                        height: 150px;
+                                                                                        width: 150px;
+                                                                                        border-radius: 50%;
+                                                                                        background: #FFF;
+                                                                                        padding: 3px;
+                                                                                    }
 
-                                                                .card-image .card-img {
-                                                                    height: 100%;
-                                                                    width: 100%;
-                                                                    object-fit: cover;
-                                                                    border-radius: 50%;
-                                                                    border: 4px solid #4070F4;
-                                                                } */
+                                                                                    .card-image .card-img {
+                                                                                        height: 100%;
+                                                                                        width: 100%;
+                                                                                        object-fit: cover;
+                                                                                        border-radius: 50%;
+                                                                                        border: 4px solid #4070F4;
+                                                                                    } */
 
         .name {
             font-size: 18px;
@@ -441,6 +441,15 @@
             z-index: 999999999999999 !important;
         }
 
+
+        .hero .carousel {
+            min-height: 100vh !important;
+        }
+
+        .mobile-sider {
+            display: none
+        }
+
         @media (max-width: 768px) {
             .carousel-item img {
                 object-fit: contain;
@@ -448,9 +457,45 @@
             }
 
             .hero .carousel {
-                min-height: 13vh !important;
+                min-height: 24vh !important;
+            }
+
+        }
+
+        /* SEMBUNYIKAN HERO DI MOBILE */
+        @media (max-width: 768px) {
+            #hero.desktop-version {
+                display: none;
+            }
+
+            #hero,
+            #hero-carousel,
+            .carousel,
+            .carousel-item {
+                height: 30vh !important;
+                min-height: 30vh !important;
+                max-height: 30vh !important;
+                overflow: hidden;
+            }
+
+            .carousel-item {
+                background-size: contain !important;
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-color: #000;
+                /* opsional untuk kontras */
             }
         }
+
+
+
+        /* SEMBUNYIKAN HERO DI DESKTOP */
+        @media (min-width: 769px) {
+            #hero.mobile-version {
+                display: none;
+            }
+        }
+
 
         .klien-logo-wrapper {
             width: 100%;
@@ -484,7 +529,7 @@
         }
 
         .portofolio-item img {
-            max-width: 140%!important;
+            max-width: 140% !important;
             height: auto;
             display: block;
         }
@@ -521,6 +566,49 @@
         .rotate-8 {
             transform: rotate(-8deg);
         }
+
+        @keyframes slide-in-left {
+            0% {
+                transform: translateX(-100%) translateY(-50%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0) translateY(-50%);
+                opacity: 1;
+            }
+            }
+
+            @keyframes slide-in-right {
+            0% {
+                transform: translateX(100%) translateY(-50%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0) translateY(-50%);
+                opacity: 1;
+            }
+            }
+
+            .img-left-animate {
+            animation: slide-in-left 1s ease forwards;
+            position: absolute;
+            top: 50%;
+            left: 30px;
+            z-index: 10;
+            max-width: 50%;
+            opacity: 0;
+            }
+
+            .img-right-animate {
+            animation: slide-in-right 1s ease forwards;
+            position: absolute;
+            top: 50%;
+            right: 30px;
+            z-index: 10;
+            max-width: 46%;
+            opacity: 0;
+            }
+
     </style>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/freeps2/a7rarpress@main/swiper-bundle.min.css">
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
@@ -534,15 +622,54 @@
     <main class="main">
 
         <!-- Hero Section -->
-        <section id="hero" class="hero section dark-background">
+        <section id="hero" class="hero section dark-background desktop-version">
 
             <div id="hero-carousel" class="carousel slide " data-bs-ride="carousel" data-bs-interval="3000">
 
                 @foreach ($slider as $s)
-                    <div class="carousel-item {{ $loop->iteration == 1 ? 'active' : '' }}">
-                        <img src="{{ asset('assets/img/slider/' . $s->image) }}" alt="">
-                    </div><!-- End Carousel Item -->
+                    <div class="carousel-item {{ $loop->iteration == 1 ? 'active' : '' }}"
+                        style="
+                            background-image: url('{{ asset('assets/img/slider/' . $s->image) }}');
+                            background-size: cover;
+                            background-position: center;
+                            height: 100vh;
+                            position: relative;
+                            overflow: hidden;
+                        ">
+
+                        <!-- LEFT IMAGE -->
+                        @if (!empty($s->left_image))
+                            <img data-aos="fade-right" data-aos-delay="300" data-aos-duration="1000"
+                                src="{{ asset('assets/img/slider/' . $s->left_image) }}" class="img-left img-right-animate" alt="Left Image"
+                                style="
+                                   position: absolute;
+                                    top: 50%;
+                                    left: 100vh;
+                                    transform: translateY(-50%);
+                                    z-index: 10;
+                                    max-width: 50%;
+                            ">
+                        @endif
+
+                        @if (!empty($s->right_image))
+                            <!-- RIGHT IMAGE -->
+                            <img data-aos="fade-left" data-aos-delay="300" data-aos-duration="1000"
+                                src="{{ asset('assets/img/slider/' . $s->right_image) }}" class="img-right img-left-animate"
+                                alt="Right Image"
+                                style="
+                                position: absolute;
+                                top: 50%;
+                                right: 30px;
+                                transform: translateY(-50%);
+                                max-width: 46%;
+                                z-index: 10;
+                            ">
+                        @endif
+
+
+                    </div>
                 @endforeach
+
 
                 <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
@@ -557,6 +684,69 @@
             </div>
 
         </section><!-- /Hero Section -->
+        <!-- Hero Section -->
+        <section id="hero" class="hero section dark-background mobile-version">
+
+            <div id="hero-carousel" class="carousel slide " data-bs-ride="carousel" data-bs-interval="3000">
+
+                @foreach ($slider as $s)
+                    <div class="carousel-item {{ $loop->iteration == 1 ? 'active' : '' }}"
+                        style="
+                            background-image: url('{{ asset('assets/img/slider/' . $s->image) }}');
+                            background-size: cover;
+                            background-position: center;
+                            height: 100vh;
+                            position: relative;
+                            overflow: hidden;
+                        ">
+
+                        <!-- LEFT IMAGE -->
+                        @if (!empty($s->left_image))
+                            <img data-aos="fade-right" src="{{ asset('assets/img/slider/' . $s->left_image) }}"
+                                class="img-left img-right-animate" alt="Left Image"
+                                style="
+                                   position: absolute;
+                                    top: 47%;
+                                    left: 22vh;
+                                    transform: translateY(-50%);
+                                    z-index: 10;
+                                    max-width: 50%;
+                            ">
+                        @endif
+
+                        @if (!empty($s->right_image))
+                            <!-- RIGHT IMAGE -->
+                            <img data-aos="fade-left" src="{{ asset('assets/img/slider/' . $s->right_image) }}"
+                                class="img-right img-left-animate" alt="Right Image"
+                                style="
+                                position: absolute;
+                                top: 47%;
+                                right: 30px;
+                                transform: translateY(-50%);
+                                max-width: 46%;
+                                z-index: 10;
+                            ">
+                        @endif
+
+
+                    </div>
+                @endforeach
+
+
+                <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+                </a>
+
+                <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
+                    <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+                </a>
+
+                <ol class="carousel-indicators"></ol>
+
+            </div>
+
+        </section>
+        <!-- /Hero Section -->
 
         <!-- About Section -->
 
@@ -592,11 +782,22 @@
                                 @php
                                     $rotationClass = 'rotate-' . (($loop->iteration % 8) + 1);
                                     $imgUrl = asset('assets/img/Portofolio/' . $pt->image);
-                                    $aosEffects = ['fade-up', 'fade-down', 'fade-left', 'fade-right', 'zoom-in', 'zoom-out', 'flip-left', 'flip-right'];
+                                    $aosEffects = [
+                                        'fade-up',
+                                        'fade-down',
+                                        'fade-left',
+                                        'fade-right',
+                                        'zoom-in',
+                                        'zoom-out',
+                                        'flip-left',
+                                        'flip-right',
+                                    ];
                                     $randomAos = $aosEffects[array_rand($aosEffects)];
                                 @endphp
-                                <div class="col-2 d-flex align-items-center justify-content-center mb-2" data-aos="{{ $randomAos }}">
-                                    <a href="{{ $imgUrl }}" class="portofolio-item {{ $rotationClass }}" data-lg-size="1600-1067">
+                                <div class="col-2 d-flex align-items-center justify-content-center mb-2"
+                                    data-aos="{{ $randomAos }}">
+                                    <a href="{{ $imgUrl }}" class="portofolio-item {{ $rotationClass }}"
+                                        data-lg-size="1600-1067">
                                         <img src="{{ $imgUrl }}" alt="portofolio logo" class="img-fluid" />
                                     </a>
                                 </div>
@@ -612,11 +813,22 @@
                             @php
                                 $rotationClassMobile = 'rotate-' . (($loop->iteration % 8) + 1);
                                 $imgUrl = asset('assets/img/Portofolio/' . $pt->image);
-                                $aosEffects = ['fade-up', 'fade-down', 'fade-left', 'fade-right', 'zoom-in', 'zoom-out', 'flip-left', 'flip-right'];
+                                $aosEffects = [
+                                    'fade-up',
+                                    'fade-down',
+                                    'fade-left',
+                                    'fade-right',
+                                    'zoom-in',
+                                    'zoom-out',
+                                    'flip-left',
+                                    'flip-right',
+                                ];
                                 $randomAos = $aosEffects[array_rand($aosEffects)];
                             @endphp
-                            <div class="col-6 d-flex align-items-center justify-content-center mb-2" data-aos="{{ $randomAos }}">
-                                <a href="{{ $imgUrl }}" class="portofolio-item {{ $rotationClassMobile }}" data-lg-size="1600-1067">
+                            <div class="col-6 d-flex align-items-center justify-content-center mb-2"
+                                data-aos="{{ $randomAos }}">
+                                <a href="{{ $imgUrl }}" class="portofolio-item {{ $rotationClassMobile }}"
+                                    data-lg-size="1600-1067">
                                     <img src="{{ $imgUrl }}" alt="portofolio logo" class="img-fluid" />
                                 </a>
                             </div>
@@ -665,8 +877,8 @@
 
                     <!-- Kanan -->
                     <div class="col-lg-6 text-center">
-                        <img src="{{ asset('assets/img/mesin/' . $set->mesin) }}" data-aos="fade-right" class="img-fluid" alt="Mesin"
-                            style="max-height: 400px; object-fit: contain;">
+                        <img src="{{ asset('assets/img/mesin/' . $set->mesin) }}" data-aos="fade-right"
+                            class="img-fluid" alt="Mesin" style="max-height: 400px; object-fit: contain;">
                     </div>
                 </div>
             </div>
@@ -687,7 +899,7 @@
                         @if ($index < 24)
                             <div class="col-4 col-sm-3 col-md-2 d-flex align-items-center justify-content-center">
                                 <div class="klien-logo-wrapper">
-                                    <img src="{{ asset('assets/img/klien/' . $k->image) }}"  alt="klien logo"
+                                    <img src="{{ asset('assets/img/klien/' . $k->image) }}" alt="klien logo"
                                         class="img-fluid">
                                 </div>
                             </div>

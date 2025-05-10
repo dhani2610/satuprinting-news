@@ -48,6 +48,14 @@
                                                         <input type="file" class="form-control" id="image" name="image" accept="/image" placeholder="Enter Slider" value="" required>
                                                     </div>
                                                     <div class="form-group mb-3">
+                                                        <label for="name" class="mb-3">LEFT IMAGE</label>
+                                                        <input type="file" class="form-control" id="left_image" name="left_image" accept="/image" placeholder="Enter Slider" value="">
+                                                    </div>
+                                                    <div class="form-group mb-3">
+                                                        <label for="name" class="mb-3">RIGHT IMAGE</label>
+                                                        <input type="file" class="form-control" id="right_image" name="right_image" accept="/image" placeholder="Enter Slider" value="">
+                                                    </div>
+                                                    <div class="form-group mb-3">
                                                         <label for="name" class="mb-3">TITLE</label>
                                                         <input type="text" class="form-control" id="category" name="category" placeholder="Enter Slider" value="">
                                                     </div>
@@ -88,6 +96,8 @@
                                 <tr>
                                     <th>NO</th>
                                     <th style="width: 10%">IMAGE</th>
+                                    <th style="width: 10%">LEFT IMAGE</th>
+                                    <th style="width: 10%">RIGHT IMAGE</th>
                                     <th>TITLE</th>
                                     <th>Description</th>
                                     <th>Created Date</th>
@@ -103,6 +113,24 @@
                                         <center>
                                             @if ($slider->image != null)
                                             <img src="{{ asset('assets/img/slider/'.$slider->image) }}" alt="" style="max-width: 100px;">
+                                            @else
+                                            -
+                                            @endif
+                                        </center>
+                                    </td>
+                                    <td>
+                                        <center>
+                                            @if ($slider->image != null)
+                                            <img src="{{ asset('assets/img/slider/'.$slider->left_image) }}" alt="" style="max-width: 100px;">
+                                            @else
+                                            -
+                                            @endif
+                                        </center>
+                                    </td>
+                                    <td>
+                                        <center>
+                                            @if ($slider->image != null)
+                                            <img src="{{ asset('assets/img/slider/'.$slider->right_image) }}" alt="" style="max-width: 100px;">
                                             @else
                                             -
                                             @endif
@@ -142,7 +170,15 @@
                                                             <div class="form-row">
                                                                 <div class="form-group mb-3">
                                                                     <label for="name" class="mb-3">Image</label>
-                                                                    <input type="file" class="form-control" id="image" name="image" placeholder="Enter Slider" value="" required>
+                                                                    <input type="file" class="form-control" id="image" name="image" placeholder="Enter Slider" value="">
+                                                                </div>
+                                                                <div class="form-group mb-3">
+                                                                    <label for="name" class="mb-3">LEFT IMAGE</label>
+                                                                    <input type="file" class="form-control" id="left_image" name="left_image" accept="/image" placeholder="Enter Slider" value="">
+                                                                </div>
+                                                                <div class="form-group mb-3">
+                                                                    <label for="name" class="mb-3">RIGHT IMAGE</label>
+                                                                    <input type="file" class="form-control" id="right_image" name="right_image" accept="/image" placeholder="Enter Slider" value="">
                                                                 </div>
                                                                 <div class="form-group mb-3">
                                                                     <label for="name" class="mb-3">TITLE</label>

@@ -533,12 +533,12 @@
             class="bi bi-arrow-up-short"></i></a>
 
     <!-- Preloader -->
-    <div id="preloader">
+    {{-- <div id="preloader">
         <div></div>
         <div></div>
         <div></div>
         <div></div>
-    </div>
+    </div> --}}
 
     {{-- foot  --}}
     @include('landing.layouts.partials.foot')
