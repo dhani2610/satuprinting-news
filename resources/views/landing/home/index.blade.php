@@ -916,7 +916,7 @@
                     <div>
                         <span class="cat-prod">Kategori Produk</span>
                     </div>
-                    <p>Silahkan klik ikon untuk daftar harga </p>
+                    <p style="color:#F7971E">Silahkan Klik untuk daftar harga </p>
                 </center>
             </div><!-- End Section Title -->
 
