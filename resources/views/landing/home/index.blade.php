@@ -289,21 +289,21 @@
         }
 
         /* .card-image {
-                                                                                                                                        position: relative;
-                                                                                                                                        height: 150px;
-                                                                                                                                        width: 150px;
-                                                                                                                                        border-radius: 50%;
-                                                                                                                                        background: #FFF;
-                                                                                                                                        padding: 3px;
-                                                                                                                                    }
+                                                                                                                                            position: relative;
+                                                                                                                                            height: 150px;
+                                                                                                                                            width: 150px;
+                                                                                                                                            border-radius: 50%;
+                                                                                                                                            background: #FFF;
+                                                                                                                                            padding: 3px;
+                                                                                                                                        }
 
-                                                                                                                                    .card-image .card-img {
-                                                                                                                                        height: 100%;
-                                                                                                                                        width: 100%;
-                                                                                                                                        object-fit: cover;
-                                                                                                                                        border-radius: 50%;
-                                                                                                                                        border: 4px solid #4070F4;
-                                                                                                                                    } */
+                                                                                                                                        .card-image .card-img {
+                                                                                                                                            height: 100%;
+                                                                                                                                            width: 100%;
+                                                                                                                                            object-fit: cover;
+                                                                                                                                            border-radius: 50%;
+                                                                                                                                            border: 4px solid #4070F4;
+                                                                                                                                        } */
 
         .name {
             font-size: 18px;
@@ -472,9 +472,9 @@
             #hero-carousel,
             .carousel,
             .carousel-item {
-                height: 26vh !important;
-                min-height: 24vh !important;
-                max-height: 30vh !important;
+                height: 47vh !important;
+                min-height: 10vh !important;
+                max-height: 32vh !important;
                 overflow: hidden;
             }
 
@@ -778,7 +778,7 @@
                                 style="
                                    position: absolute;
                                         top: 56%;
-                                    left: 24vh;
+                                    left: 30vh;
                                     transform: translateY(-50%);
                                     z-index: 10;
                                     max-width: 50%;
@@ -787,7 +787,7 @@
 
                         @if (!empty($s->right_image))
                             <!-- RIGHT IMAGE -->
-                             <style>
+                            <style>
                                 .slider-text {
                                     position: absolute;
                                     top: 50%;
@@ -825,12 +825,12 @@
                             <div class="slider-text aos-init aos-animate" data-aos="fade-right" data-aos-delay="400"
                                 data-aos-duration="1000"
                                 style="top: 15%;left: 10%;font-family: 'Bebas Neue', sans-serif!important; line-height: 1;">
-                                <span style="font-size: 20px;">PRINT OUTDOOR</span>
-                                <span style="font-size: 20px; margin-left: 22%;">PRINT INDOOR</span>
-                                <span style="font-size: 20px; margin-left: 10%;">CETAK OFFSET</span>
-                                <span style="font-size: 20px; margin-left: 35%;">PRINT A3+</span>
-                                <span style="font-size: 20px; margin-left: 43%;">MERCHANDISE</span>
-                                <span style="font-size: 20px;">VINYL APPLICATOR</span>
+                                <span style="font-size: 25px;">PRINT OUTDOOR</span>
+                                <span style="font-size: 25px; margin-left: 22%;">PRINT INDOOR</span>
+                                <span style="font-size: 25px; margin-left: 10%;">CETAK OFFSET</span>
+                                <span style="font-size: 25px; margin-left: 35%;">PRINT A3+</span>
+                                <span style="font-size: 25px; margin-left: 43%;">MERCHANDISE</span>
+                                <span style="font-size: 25px;">VINYL APPLICATOR</span>
                             </div>
                         @endif
 
