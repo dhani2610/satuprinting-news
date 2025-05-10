@@ -480,12 +480,11 @@
             position: relative;
             transition: transform 0.3s ease;
             box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
-            background: white;
             padding: 5px;
         }
 
         .portofolio-item img {
-            width: 100%;
+            max-width: 140%!important;
             height: auto;
             display: block;
         }
@@ -577,7 +576,7 @@
 
                 @while ($index < $total)
                     @php
-                        $randomCount = $rowCount == 1 ? 4 : rand(4, 5);
+                        $randomCount = $rowCount == 1 ? 5 : rand(4, 5);
                         $chunk = $portofolio->slice($index, $randomCount);
                         $chunks[] = $chunk;
                         $index += $randomCount;
@@ -585,24 +584,46 @@
                     @endphp
                 @endwhile
 
-                @foreach ($chunks as $chunk)
-                    <div class="row gx-1 gy-1 justify-content-center text-center flex-wrap">
-                        @foreach ($chunk as $pt)
+                <!-- DESKTOP VIEW -->
+                <div class="container d-none d-md-block" id="lightgallery-desktop">
+                    @foreach ($chunks as $chunk)
+                        <div class="row gx-1 gy-1 justify-content-center text-center flex-wrap">
+                            @foreach ($chunk as $pt)
+                                @php
+                                    $rotationClass = 'rotate-' . (($loop->iteration % 8) + 1);
+                                    $imgUrl = asset('assets/img/Portofolio/' . $pt->image);
+                                    $aosEffects = ['fade-up', 'fade-down', 'fade-left', 'fade-right', 'zoom-in', 'zoom-out', 'flip-left', 'flip-right'];
+                                    $randomAos = $aosEffects[array_rand($aosEffects)];
+                                @endphp
+                                <div class="col-2 d-flex align-items-center justify-content-center mb-2" data-aos="{{ $randomAos }}">
+                                    <a href="{{ $imgUrl }}" class="portofolio-item {{ $rotationClass }}" data-lg-size="1600-1067">
+                                        <img src="{{ $imgUrl }}" alt="portofolio logo" class="img-fluid" />
+                                    </a>
+                                </div>
+                            @endforeach
+                        </div>
+                    @endforeach
+                </div>
+
+                <!-- MOBILE VIEW -->
+                <div class="container d-block d-md-none" id="lightgallery-mobile" style="padding-right: 16%;">
+                    <div class="row gx-1 gy-1 justify-content-center text-center">
+                        @foreach ($portofolio as $pt)
                             @php
-                                $rotationClass = 'rotate-' . (($loop->iteration % 8) + 1);
+                                $rotationClassMobile = 'rotate-' . (($loop->iteration % 8) + 1);
                                 $imgUrl = asset('assets/img/Portofolio/' . $pt->image);
                                 $aosEffects = ['fade-up', 'fade-down', 'fade-left', 'fade-right', 'zoom-in', 'zoom-out', 'flip-left', 'flip-right'];
                                 $randomAos = $aosEffects[array_rand($aosEffects)];
                             @endphp
-                            <div class="col d-flex align-items-center justify-content-center" style="max-width: 20%;" data-aos="{{ $randomAos }}">
-                                <a href="{{ $imgUrl }}" class="portofolio-item {{ $rotationClass }}" data-lg-size="1600-1067">
+                            <div class="col-6 d-flex align-items-center justify-content-center mb-2" data-aos="{{ $randomAos }}">
+                                <a href="{{ $imgUrl }}" class="portofolio-item {{ $rotationClassMobile }}" data-lg-size="1600-1067">
                                     <img src="{{ $imgUrl }}" alt="portofolio logo" class="img-fluid" />
                                 </a>
                             </div>
                         @endforeach
-
                     </div>
-                @endforeach
+                </div>
+
             </div>
         </section>
 
@@ -625,7 +646,7 @@
             <div class="container" data-aos="fade-up" data-aos-delay="100">
                 <div class="row align-items-center">
                     <!-- Kiri -->
-                    <div class="col-lg-6">
+                    <div class="col-lg-6" data-aos="fade-left">
                         <h1 style="color: #F7971E; font-weight: bold; font-size: 32px;padding: 0;">
                             MESIN KAMI
                         </h1>
@@ -644,7 +665,7 @@
 
                     <!-- Kanan -->
                     <div class="col-lg-6 text-center">
-                        <img src="{{ asset('assets/img/mesin/' . $set->mesin) }}" class="img-fluid" alt="Mesin"
+                        <img src="{{ asset('assets/img/mesin/' . $set->mesin) }}" data-aos="fade-right" class="img-fluid" alt="Mesin"
                             style="max-height: 400px; object-fit: contain;">
                     </div>
                 </div>
@@ -660,13 +681,13 @@
                 <div><span class="cat-prod"> <b>Klien</b></span></div>
             </div>
 
-            <div class="container">
+            <div class="container" data-aos="fade-left">
                 <div class="row gx-1 gy-1 justify-content-center text-center">
                     @foreach ($klien as $index => $k)
                         @if ($index < 24)
                             <div class="col-4 col-sm-3 col-md-2 d-flex align-items-center justify-content-center">
                                 <div class="klien-logo-wrapper">
-                                    <img src="{{ asset('assets/img/klien/' . $k->image) }}" alt="klien logo"
+                                    <img src="{{ asset('assets/img/klien/' . $k->image) }}"  alt="klien logo"
                                         class="img-fluid">
                                 </div>
                             </div>
@@ -717,70 +738,12 @@
 
         </section><!-- /Services Section -->
 
-        <!-- Services Section -->
-        <section id="services" class="services section">
-
-            <!-- Section Title -->
-            <div class="container section-title" data-aos="fade-up" style="">
-                <center>
-                    <div><span class="cat-prod">Produk Baru</span></div>
-
-                </center>
-            </div><!-- End Section Title -->
-
-            <div class="container">
-
-                <div class="row gy-4">
-
-                    <div class="container">
-                        <div class="row" id="product-container">
-                            @foreach ($allProducts as $index => $p)
-                                @php
-                                    $catProd = App\Models\CategoryDocument::where('id', $p->id_category)->first();
-                                @endphp
-                                <div class="col-md-3 col-sm-6 product-item "
-                                    @if ($index >= 10) style="display: none;" @endif>
-                                    <div class="product-grid">
-                                        <div class="product-image">
-                                            <a href="{{ route('detail-prod', $p->id) }}" class="image">
-                                                <img class="pic-1" src="{{ asset('assets/img/product/' . $p->image) }}">
-                                                <img class="pic-2" src="{{ asset('assets/img/product/' . $p->image) }}">
-                                            </a>
-                                        </div>
-                                        <div class="product-content">
-                                            <h3 class="title">
-                                                <a href="#"
-                                                    style="color: #F7941D!important">{{ $p->service }}</a>
-                                            </h3>
-                                            <div class="price">From @currency($p->price)</div>
-                                            <a href="{{ route('detail-prod', $p->id) }}" class="add-cart">
-                                                <i class="fas fa-cart-plus"></i>Lihat Detail
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endforeach
-                        </div>
-
-                    </div>
-
-
-                </div>
-
-            </div>
-
-        </section><!-- /Services Section -->
-
-
         <!-- Stats Section -->
         <section id="stats" class="stats section" style="background: linear-gradient(to bottom, #FCE15A, #F7971E);">
 
             <div class="container" data-aos="fade-up" data-aos-delay="100">
 
                 <div class="row gy-4">
-                    {{-- <div class="col-lg-2">
-                        <img src="{{ asset('assets-landing/img/home/LAIN LAIN.png') }}" class="img-fluid">
-                    </div> --}}
                     <div id="container">
 
                         <div class="row">
