@@ -10,12 +10,6 @@
                     <img src="{{ asset('assets-landing/img/home/LOGO.png') }}" alt="">
                   </a>
                 <div class="footer-contact pt-3">
-                    <p> <b>Hubungi kami</b>
-                        <br>
-                        <br>
-                        Ruko Pesona Jl. Panti Asuhan No. G3A <br>  Pondok Aren, Tangerang Selatan 15223
-                    </p>
-
                     <div class="social-links mt-4">
                         <a target="_blank" href="https://wa.me/6282210008380"><i class="bi bi-whatsapp"></i>  0822 1000 8380</a> <br>
                         <a target="_blank" href="https://www.instagram.com/satuprinting.id?igsh=dmxlczlyamlyMWg1"><i class="bi bi-instagram"></i>  @satuprinting.id</a> <br>

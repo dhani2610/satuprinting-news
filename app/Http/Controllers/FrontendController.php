@@ -62,7 +62,7 @@ class FrontendController extends Controller
         $data['allProductsDisc'] = Services::whereNull('deleted_at')->where('status',1)->where('is_diskon',1)->orderBy('created_at','desc')->limit(8)->get();
         $data['klien'] = Klien::orderBy('created_at','desc')->get();
         $data['mesin'] = Mesin::orderBy('created_at','asc')->get();
-        $data['portofolio'] = Portofolio::orderBy('created_at','desc')->get();
+        $data['portofolio'] = Portofolio::orderBy('created_at','desc')->get()->take(16);
         // return response()->json($data['mesin']);
         return view('landing.home.index',$data);
     }

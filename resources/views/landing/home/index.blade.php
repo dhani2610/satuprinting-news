@@ -289,21 +289,21 @@
         }
 
         /* .card-image {
-                                                                                        position: relative;
-                                                                                        height: 150px;
-                                                                                        width: 150px;
-                                                                                        border-radius: 50%;
-                                                                                        background: #FFF;
-                                                                                        padding: 3px;
-                                                                                    }
+                                                                                                            position: relative;
+                                                                                                            height: 150px;
+                                                                                                            width: 150px;
+                                                                                                            border-radius: 50%;
+                                                                                                            background: #FFF;
+                                                                                                            padding: 3px;
+                                                                                                        }
 
-                                                                                    .card-image .card-img {
-                                                                                        height: 100%;
-                                                                                        width: 100%;
-                                                                                        object-fit: cover;
-                                                                                        border-radius: 50%;
-                                                                                        border: 4px solid #4070F4;
-                                                                                    } */
+                                                                                                        .card-image .card-img {
+                                                                                                            height: 100%;
+                                                                                                            width: 100%;
+                                                                                                            object-fit: cover;
+                                                                                                            border-radius: 50%;
+                                                                                                            border: 4px solid #4070F4;
+                                                                                                        } */
 
         .name {
             font-size: 18px;
@@ -572,24 +572,26 @@
                 transform: translateX(-100%) translateY(-50%);
                 opacity: 0;
             }
+
             100% {
                 transform: translateX(0) translateY(-50%);
                 opacity: 1;
             }
-            }
+        }
 
-            @keyframes slide-in-right {
+        @keyframes slide-in-right {
             0% {
                 transform: translateX(100%) translateY(-50%);
                 opacity: 0;
             }
+
             100% {
                 transform: translateX(0) translateY(-50%);
                 opacity: 1;
             }
-            }
+        }
 
-            .img-left-animate {
+        .img-left-animate {
             animation: slide-in-left 1s ease forwards;
             position: absolute;
             top: 50%;
@@ -597,9 +599,9 @@
             z-index: 10;
             max-width: 50%;
             opacity: 0;
-            }
+        }
 
-            .img-right-animate {
+        .img-right-animate {
             animation: slide-in-right 1s ease forwards;
             position: absolute;
             top: 50%;
@@ -607,7 +609,42 @@
             z-index: 10;
             max-width: 46%;
             opacity: 0;
-            }
+        }
+
+        .gallery {
+    padding: 0;
+    margin: 0;
+}
+
+.gallery-row {
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.gallery .gallery-item {
+    padding: 0;
+    margin: 0;
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+
+.gallery .gallery-item a,
+.gallery .gallery-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
+
+/* ✅ Mobile: 2 per row */
+@media (max-width: 768px) {
+    .gallery .gallery-item {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
 
     </style>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/freeps2/a7rarpress@main/swiper-bundle.min.css">
@@ -640,7 +677,8 @@
                         <!-- LEFT IMAGE -->
                         @if (!empty($s->left_image))
                             <img data-aos="fade-right" data-aos-delay="300" data-aos-duration="1000"
-                                src="{{ asset('assets/img/slider/' . $s->left_image) }}" class="img-left img-right-animate" alt="Left Image"
+                                src="{{ asset('assets/img/slider/' . $s->left_image) }}" class="img-left img-right-animate"
+                                alt="Left Image"
                                 style="
                                    position: absolute;
                                     top: 50%;
@@ -753,61 +791,35 @@
         <!-- Klien Section -->
         <section id="portofolio" class="portofolio section" style="background: #F7971E;">
             <div class="container section-title" data-aos="fade-up" style="padding-bottom: 0;font-size: 30px;">
-                <div><span class="cat-prod"><b>Portofolio</b></span></div>
+                <div>
+                    <center>
+                        <span class="cat-prod"><b>Portofolio</b></span>
+                    </center>
+                </div>
             </div>
 
-            <div class="container" id="lightgallery">
-                @php
-                    $chunks = [];
-                    $index = 0;
-                    $total = count($portofolio);
-                    $rowCount = 0;
-                @endphp
-
-                @while ($index < $total)
-                    @php
-                        $randomCount = $rowCount == 1 ? 5 : rand(4, 5);
-                        $chunk = $portofolio->slice($index, $randomCount);
-                        $chunks[] = $chunk;
-                        $index += $randomCount;
-                        $rowCount++;
-                    @endphp
-                @endwhile
-
+            <div class="container-fluid" id="lightgallery" style="padding-left:0px!important;padding-right:0px!important">
                 <!-- DESKTOP VIEW -->
-                <div class="container d-none d-md-block" id="lightgallery-desktop">
-                    @foreach ($chunks as $chunk)
-                        <div class="row gx-1 gy-1 justify-content-center text-center flex-wrap">
-                            @foreach ($chunk as $pt)
-                                @php
-                                    $rotationClass = 'rotate-' . (($loop->iteration % 8) + 1);
-                                    $imgUrl = asset('assets/img/Portofolio/' . $pt->image);
-                                    $aosEffects = [
-                                        'fade-up',
-                                        'fade-down',
-                                        'fade-left',
-                                        'fade-right',
-                                        'zoom-in',
-                                        'zoom-out',
-                                        'flip-left',
-                                        'flip-right',
-                                    ];
-                                    $randomAos = $aosEffects[array_rand($aosEffects)];
-                                @endphp
-                                <div class="col-2 d-flex align-items-center justify-content-center mb-2"
-                                    data-aos="{{ $randomAos }}">
-                                    <a href="{{ $imgUrl }}" class="portofolio-item {{ $rotationClass }}"
-                                        data-lg-size="1600-1067">
-                                        <img src="{{ $imgUrl }}" alt="portofolio logo" class="img-fluid" />
-                                    </a>
-                                </div>
-                            @endforeach
-                        </div>
-                    @endforeach
-                </div>
+                <div class="container-fluid gallery" id="lightgallery-desktop">
+    <div class="row gallery-row">
+        @foreach ($portofolio as $pt)
+            @php
+                $imgUrl = asset('assets/img/Portofolio/' . $pt->image);
+            @endphp
+            <div class="gallery-item">
+                <a href="{{ $imgUrl }}" class="portofolio-item" data-lg-size="1600-1067">
+                    <img src="{{ $imgUrl }}" alt="portofolio logo" class="img-fluid" />
+                </a>
+            </div>
+        @endforeach
+    </div>
+</div>
+
+
+
 
                 <!-- MOBILE VIEW -->
-                <div class="container d-block d-md-none" id="lightgallery-mobile" style="padding-right: 16%;">
+                {{-- <div class="container d-block d-md-none" id="lightgallery-mobile" style="padding-right: 16%;">
                     <div class="row gx-1 gy-1 justify-content-center text-center">
                         @foreach ($portofolio as $pt)
                             @php
@@ -834,7 +846,7 @@
                             </div>
                         @endforeach
                     </div>
-                </div>
+                </div> --}}
 
             </div>
         </section>
