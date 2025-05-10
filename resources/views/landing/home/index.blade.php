@@ -289,21 +289,21 @@
         }
 
         /* .card-image {
-                                                                                                            position: relative;
-                                                                                                            height: 150px;
-                                                                                                            width: 150px;
-                                                                                                            border-radius: 50%;
-                                                                                                            background: #FFF;
-                                                                                                            padding: 3px;
-                                                                                                        }
+                                                                                                                            position: relative;
+                                                                                                                            height: 150px;
+                                                                                                                            width: 150px;
+                                                                                                                            border-radius: 50%;
+                                                                                                                            background: #FFF;
+                                                                                                                            padding: 3px;
+                                                                                                                        }
 
-                                                                                                        .card-image .card-img {
-                                                                                                            height: 100%;
-                                                                                                            width: 100%;
-                                                                                                            object-fit: cover;
-                                                                                                            border-radius: 50%;
-                                                                                                            border: 4px solid #4070F4;
-                                                                                                        } */
+                                                                                                                        .card-image .card-img {
+                                                                                                                            height: 100%;
+                                                                                                                            width: 100%;
+                                                                                                                            object-fit: cover;
+                                                                                                                            border-radius: 50%;
+                                                                                                                            border: 4px solid #4070F4;
+                                                                                                                        } */
 
         .name {
             font-size: 18px;
@@ -612,40 +612,39 @@
         }
 
         .gallery {
-    padding: 0;
-    margin: 0;
-}
+            padding: 0;
+            margin: 0;
+        }
 
-.gallery-row {
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-}
+        .gallery-row {
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
 
-.gallery .gallery-item {
-    padding: 0;
-    margin: 0;
-    flex: 0 0 25%;
-    max-width: 25%;
-}
+        .gallery .gallery-item {
+            padding: 0;
+            margin: 0;
+            flex: 0 0 25%;
+            max-width: 25%;
+        }
 
-.gallery .gallery-item a,
-.gallery .gallery-item img {
-    display: block;
-    width: 100%;
-    height: auto;
-    margin: 0;
-    padding: 0;
-}
+        .gallery .gallery-item a,
+        .gallery .gallery-item img {
+            display: block;
+            width: 100%;
+            height: auto;
+            margin: 0;
+            padding: 0;
+        }
 
-/* ✅ Mobile: 2 per row */
-@media (max-width: 768px) {
-    .gallery .gallery-item {
-        flex: 0 0 50%;
-        max-width: 50%;
-    }
-}
-
+        /* ✅ Mobile: 2 per row */
+        @media (max-width: 768px) {
+            .gallery .gallery-item {
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+        }
     </style>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/freeps2/a7rarpress@main/swiper-bundle.min.css">
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
@@ -675,7 +674,7 @@
                         ">
 
                         <!-- LEFT IMAGE -->
-                        @if (!empty($s->left_image))
+                        @if (!empty($s->right_image))
                             <img data-aos="fade-right" data-aos-delay="300" data-aos-duration="1000"
                                 src="{{ asset('assets/img/slider/' . $s->left_image) }}" class="img-left img-right-animate"
                                 alt="Left Image"
@@ -691,17 +690,38 @@
 
                         @if (!empty($s->right_image))
                             <!-- RIGHT IMAGE -->
-                            <img data-aos="fade-left" data-aos-delay="300" data-aos-duration="1000"
-                                src="{{ asset('assets/img/slider/' . $s->right_image) }}" class="img-right img-left-animate"
-                                alt="Right Image"
-                                style="
-                                position: absolute;
-                                top: 50%;
-                                right: 30px;
-                                transform: translateY(-50%);
-                                max-width: 46%;
-                                z-index: 10;
-                            ">
+                            <style>
+                                .slider-text {
+                                    position: absolute;
+                                    top: 50%;
+                                    left: 50px;
+                                    transform: translateY(-50%);
+                                    z-index: 20;
+                                    color: white;
+                                    text-transform: uppercase;
+                                }
+
+                                .slider-text h1 {
+                                    font-size: 3vw;
+                                    font-weight: 900;
+                                    margin: 0.3em 0;
+                                    line-height: 1.1;
+                                    letter-spacing: 1px;
+                                    text-shadow:
+                                        1px 1px 0 #fff,
+                                        -1px 1px 0 #fff,
+                                        1px -1px 0 #fff,
+                                        -1px -1px 0 #fff;
+                                }
+                            </style>
+                            <div class="slider-text" data-aos="fade-right" data-aos-delay="400" data-aos-duration="1000">
+                                <span>PRINT OUTDOOR</span> <br>
+                                <span>PRINT INDOOR</span> <br>
+                                <span>CETAK OFFSET</span> <br>
+                                <span>PRINT A3+</span> <br>
+                                <span>MERCHANDISE</span> <br>
+                                <span>VINYL APPLICATOR</span> <br>
+                            </div>
                         @endif
 
 
@@ -789,65 +809,31 @@
         <!-- About Section -->
 
         <!-- Klien Section -->
-        <section id="portofolio" class="portofolio section" style="background: #F7971E;">
-            <div class="container section-title" data-aos="fade-up" style="padding-bottom: 0;font-size: 30px;">
+        <section id="portofolio" class="portofolio section" style="padding:0px!important;">
+            {{-- <div class="container section-title" data-aos="fade-up" style="padding-bottom: 0;font-size: 30px;">
                 <div>
                     <center>
                         <span class="cat-prod"><b>Portofolio</b></span>
                     </center>
                 </div>
-            </div>
+            </div> --}}
 
             <div class="container-fluid" id="lightgallery" style="padding-left:0px!important;padding-right:0px!important">
                 <!-- DESKTOP VIEW -->
                 <div class="container-fluid gallery" id="lightgallery-desktop">
-    <div class="row gallery-row">
-        @foreach ($portofolio as $pt)
-            @php
-                $imgUrl = asset('assets/img/Portofolio/' . $pt->image);
-            @endphp
-            <div class="gallery-item">
-                <a href="{{ $imgUrl }}" class="portofolio-item" data-lg-size="1600-1067">
-                    <img src="{{ $imgUrl }}" alt="portofolio logo" class="img-fluid" />
-                </a>
-            </div>
-        @endforeach
-    </div>
-</div>
-
-
-
-
-                <!-- MOBILE VIEW -->
-                {{-- <div class="container d-block d-md-none" id="lightgallery-mobile" style="padding-right: 16%;">
-                    <div class="row gx-1 gy-1 justify-content-center text-center">
+                    <div class="row gallery-row">
                         @foreach ($portofolio as $pt)
                             @php
-                                $rotationClassMobile = 'rotate-' . (($loop->iteration % 8) + 1);
                                 $imgUrl = asset('assets/img/Portofolio/' . $pt->image);
-                                $aosEffects = [
-                                    'fade-up',
-                                    'fade-down',
-                                    'fade-left',
-                                    'fade-right',
-                                    'zoom-in',
-                                    'zoom-out',
-                                    'flip-left',
-                                    'flip-right',
-                                ];
-                                $randomAos = $aosEffects[array_rand($aosEffects)];
                             @endphp
-                            <div class="col-6 d-flex align-items-center justify-content-center mb-2"
-                                data-aos="{{ $randomAos }}">
-                                <a href="{{ $imgUrl }}" class="portofolio-item {{ $rotationClassMobile }}"
-                                    data-lg-size="1600-1067">
+                            <div class="gallery-item">
+                                <a href="{{ $imgUrl }}" class="portofolio-item" data-lg-size="1600-1067">
                                     <img src="{{ $imgUrl }}" alt="portofolio logo" class="img-fluid" />
                                 </a>
                             </div>
                         @endforeach
                     </div>
-                </div> --}}
-
+                </div>
             </div>
         </section>
 
@@ -971,7 +957,7 @@
                     <div id="container">
 
                         <div class="row">
-                            <div class="col-lg-3">
+                            {{-- <div class="col-lg-3">
                                 <h5 style="color: bronze">
                                     <b>
                                         Promo Bulan ini
@@ -981,12 +967,12 @@
                                 <p style="color: burlywood">Nikmati Promosinya</p>
 
                                 <img src="{{ asset('assets/img/promo/' . $set->promo) }}" class="img-fluid">
-                            </div>
-                            <div class="col-lg-9">
+                            </div> --}}
+                            <div class="col-lg-12">
                                 <div class="slide-container swiper">
                                     <div class="slide-content">
                                         <div class="card-wrapper swiper-wrapper">
-                                            @foreach ($allProductsDisc as $p)
+                                            @foreach ($allProducts as $p)
                                                 @php
 
                                                     $catProd = App\Models\CategoryDocument::where(
@@ -1080,7 +1066,7 @@
 
     <script>
         var swiper = new Swiper(".slide-content", {
-            slidesPerView: 4,
+            slidesPerView: 5,
             spaceBetween: 10,
             loop: false,
             centerSlide: 'true',
@@ -1104,7 +1090,7 @@
                     slidesPerView: 2,
                 },
                 950: {
-                    slidesPerView: 4,
+                    slidesPerView: 5,
                 },
             },
         });

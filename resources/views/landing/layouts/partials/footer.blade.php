@@ -9,11 +9,11 @@
                 <a href="/" class="logo d-flex align-items-center">
                     <img src="{{ asset('assets-landing/img/home/LOGO.png') }}" alt="">
                   </a>
-                <div class="footer-contact pt-3">
-                    <div class="social-links mt-4">
+                <div class="footer-contact ">
+                    <div class="social-links ">
                         <a target="_blank" href="https://wa.me/6282210008380"><i class="bi bi-whatsapp"></i>  0822 1000 8380</a> <br>
                         <a target="_blank" href="https://www.instagram.com/satuprinting.id?igsh=dmxlczlyamlyMWg1"><i class="bi bi-instagram"></i>  @satuprinting.id</a> <br>
-                        <a target="_blank" href="https://www.tiktok.com/@satu.printing?_t=8sEIq5opyTg&_r=1"><i class="bi bi-tiktok"></i> satu.printing</a> <br>
+                        <a target="_blank" href="https://www.tiktok.com/@satu.printing?_t=8sEIq5opyTg&_r=1"><i class="bi bi-tiktok"></i> satuprinting</a> <br>
                         <a target="_blank" href="#"><i class="bi bi-facebook"></i> Satu Printing Indonesia</a> <br>
                         <a target="_blank" href="#"><i class="bi bi-youtube"></i> Satu Printing Indonesia</a> <br>
                       </div>
