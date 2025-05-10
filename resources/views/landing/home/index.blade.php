@@ -913,7 +913,10 @@
             <!-- Section Title -->
             <div class="container section-title " data-aos="fade-up">
                 <center>
-                    <div><span class="cat-prod">Kategori Produk</span></div>
+                    <div>
+                        <span class="cat-prod">Kategori Produk</span>
+                    </div>
+                    <p>Silahkan klik ikon untuk daftar harga </p>
                 </center>
             </div><!-- End Section Title -->
 
