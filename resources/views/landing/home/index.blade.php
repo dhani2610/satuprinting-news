@@ -625,8 +625,8 @@
         .gallery .gallery-item {
             padding: 0;
             margin: 0;
-            flex: 0 0 25%;
-            max-width: 25%;
+            flex: 0 0 20%;
+            max-width: 20%;
         }
 
         .gallery .gallery-item a,
