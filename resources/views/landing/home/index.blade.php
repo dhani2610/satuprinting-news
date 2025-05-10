@@ -289,21 +289,21 @@
         }
 
         /* .card-image {
-                                                                                                                            position: relative;
-                                                                                                                            height: 150px;
-                                                                                                                            width: 150px;
-                                                                                                                            border-radius: 50%;
-                                                                                                                            background: #FFF;
-                                                                                                                            padding: 3px;
-                                                                                                                        }
+                                                                                                                                position: relative;
+                                                                                                                                height: 150px;
+                                                                                                                                width: 150px;
+                                                                                                                                border-radius: 50%;
+                                                                                                                                background: #FFF;
+                                                                                                                                padding: 3px;
+                                                                                                                            }
 
-                                                                                                                        .card-image .card-img {
-                                                                                                                            height: 100%;
-                                                                                                                            width: 100%;
-                                                                                                                            object-fit: cover;
-                                                                                                                            border-radius: 50%;
-                                                                                                                            border: 4px solid #4070F4;
-                                                                                                                        } */
+                                                                                                                            .card-image .card-img {
+                                                                                                                                height: 100%;
+                                                                                                                                width: 100%;
+                                                                                                                                object-fit: cover;
+                                                                                                                                border-radius: 50%;
+                                                                                                                                border: 4px solid #4070F4;
+                                                                                                                            } */
 
         .name {
             font-size: 18px;
@@ -472,8 +472,8 @@
             #hero-carousel,
             .carousel,
             .carousel-item {
-                height: 30vh !important;
-                min-height: 30vh !important;
+                height: 26vh !important;
+                min-height: 24vh !important;
                 max-height: 30vh !important;
                 overflow: hidden;
             }
@@ -714,13 +714,14 @@
                                         -1px -1px 0 #fff;
                                 }
                             </style>
-                            <div class="slider-text" data-aos="fade-right" data-aos-delay="400" data-aos-duration="1000" style="top: 7%;left: 10%;">
-                                <span style="font-size: 65px;!important" >PRINT OUTDOOR</span> <br>
-                                <span style="font-size: 65px;!important" >PRINT INDOOR</span> <br>
-                                <span style="font-size: 65px;!important" >CETAK OFFSET</span> <br>
-                                <span style="font-size: 65px;!important" >PRINT A3+</span> <br>
-                                <span style="font-size: 65px;!important" >MERCHANDISE</span> <br>
-                                <span style="font-size: 65px;!important" >VINYL APPLICATOR</span> <br>
+                            <div class="slider-text" data-aos="fade-right" data-aos-delay="400" data-aos-duration="1000"
+                                style="top: 7%;left: 10%;">
+                                <span style="font-size: 65px;!important">PRINT OUTDOOR</span> <br>
+                                <span style="font-size: 65px;!important">PRINT INDOOR</span> <br>
+                                <span style="font-size: 65px;!important">CETAK OFFSET</span> <br>
+                                <span style="font-size: 65px;!important">PRINT A3+</span> <br>
+                                <span style="font-size: 65px;!important">MERCHANDISE</span> <br>
+                                <span style="font-size: 65px;!important">VINYL APPLICATOR</span> <br>
                             </div>
                         @endif
 
@@ -764,8 +765,8 @@
                                 class="img-left img-right-animate" alt="Left Image"
                                 style="
                                    position: absolute;
-                                    top: 47%;
-                                    left: 22vh;
+                                        top: 56%;
+    left: 24vh;
                                     transform: translateY(-50%);
                                     z-index: 10;
                                     max-width: 50%;
@@ -774,16 +775,39 @@
 
                         @if (!empty($s->right_image))
                             <!-- RIGHT IMAGE -->
-                            <img data-aos="fade-left" src="{{ asset('assets/img/slider/' . $s->right_image) }}"
-                                class="img-right img-left-animate" alt="Right Image"
-                                style="
-                                position: absolute;
-                                top: 47%;
-                                right: 30px;
-                                transform: translateY(-50%);
-                                max-width: 46%;
-                                z-index: 10;
-                            ">
+                            <style>
+                                .slider-text {
+                                    position: absolute;
+                                    top: 50%;
+                                    left: 50px;
+                                    transform: translateY(-50%);
+                                    z-index: 20;
+                                    color: white;
+                                    text-transform: uppercase;
+                                }
+
+                                .slider-text h1 {
+                                    font-size: 3vw;
+                                    font-weight: 900;
+                                    margin: 0.3em 0;
+                                    line-height: 1.1;
+                                    letter-spacing: 1px;
+                                    text-shadow:
+                                        1px 1px 0 #fff,
+                                        -1px 1px 0 #fff,
+                                        1px -1px 0 #fff,
+                                        -1px -1px 0 #fff;
+                                }
+                            </style>
+                            <div class="slider-text" data-aos="fade-right" data-aos-delay="400" data-aos-duration="1000"
+                                style="top: 10%;left: 10%;">
+                                <span style="font-size: 20px;!important">PRINT OUTDOOR</span> <br>
+                                <span style="font-size: 20px;!important">PRINT INDOOR</span> <br>
+                                <span style="font-size: 20px;!important">CETAK OFFSET</span> <br>
+                                <span style="font-size: 20px;!important">PRINT A3+</span> <br>
+                                <span style="font-size: 20px;!important">MERCHANDISE</span> <br>
+                                <span style="font-size: 20px;!important">VINYL APPLICATOR</span> <br>
+                            </div>
                         @endif
 
 
@@ -809,7 +833,7 @@
         <!-- About Section -->
 
 
-          <!-- Klien Section -->
+        <!-- Klien Section -->
         <section id="portofolio" class="portofolio section" style="padding:0px!important;">
 
             <div class="container-fluid" id="lightgallery" style="padding-left:0px!important;padding-right:0px!important">
@@ -843,7 +867,7 @@
                 selector: 'a'
             });
         </script>
-        
+
 
         <!-- Services Section -->
         <section id="services" class="services section">
@@ -888,7 +912,7 @@
 
             <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-                 <!-- Section Title -->
+                <!-- Section Title -->
                 <div class="container section-title " data-aos="fade-up">
                     <center>
                         <div><span class="cat-prod">Promo Bulan ini</span></div>
@@ -962,7 +986,7 @@
         </section><!-- /Stats Section -->
 
 
-      
+
 
 
         <!-- Stats Section -->
