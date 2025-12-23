@@ -735,15 +735,17 @@
                                 <span style="font-size: 99px; margin-left: 43%;">MERCHANDISE</span>
                                 <span style="font-size: 99px;">VINYL APPLICATOR</span>
                             </div> --}}
-                            <div class="slider-text aos-init aos-animate" data-aos="fade-right" data-aos-delay="400" data-aos-duration="1000" style="top: 1%;left: 13%;font-family: 'Bebas Neue', sans-serif!important;line-height: 1;">
-                                <span style="font-size: 94px;/* margin-left: 14%; */">PRINT OUTDOOR</span>
-                                <span style="font-size: 76px;margin-left: 17%;">PRINT INDOOR</span>
-                                <span style="font-size: 76px;margin-left: 10%;">CETAK OFFSET</span>
-                                <span style="font-size: 76px;margin-left: 35%;">PRINT A3+</span>
-                                <span style="font-size: 75px;margin-left: 43%;">MERCHANDISE</span>
-                                <a href="http://wrappingtroops.com" style="color: white">
-                                    <span style="font-size: 76px;">VINYL APPLICATOR</span>
-                                </a>
+                            <div class="slider-text aos-init aos-animate" data-aos="fade-right"  style="top: 1%;left: 13%;font-family: 'Bebas Neue', sans-serif!important;line-height: 1;">
+                                <span style="font-size: 94px;/* margin-left: 14%; */"  data-aos="fade-right" data-aos-delay="400">PRINT OUTDOOR</span>
+                                <span style="font-size: 76px;margin-left: 17%;"  data-aos="fade-right" data-aos-delay="700">PRINT INDOOR</span>
+                                <span style="font-size: 76px;margin-left: 10%;"  data-aos="fade-right" data-aos-delay="1000">CETAK OFFSET</span>
+                                <span style="font-size: 76px;margin-left: 35%;"  data-aos="fade-right" data-aos-delay="1300">PRINT A3+</span>
+                                <span style="font-size: 75px;margin-left: 43%;"  data-aos="fade-right" data-aos-delay="1600">MERCHANDISE</span>
+                                <span style="font-size: 76px;"  data-aos="fade-right" data-aos-delay="1900">
+                                    <a href="http://wrappingtroops.com" style="color: white" >
+                                        VINYL APPLICATOR
+                                    </a>
+                                </span>
                             </div>
                         @endif
 
@@ -835,12 +837,12 @@
                             <div class="slider-text aos-init aos-animate" data-aos="fade-right" data-aos-delay="400"
                                 data-aos-duration="1000"
                                 style="top: 15%;left: 10%;font-family: 'Bebas Neue', sans-serif!important; line-height: 1;">
-                                <span style="font-size: 25px;">PRINT OUTDOOR</span>
-                                <span style="font-size: 25px; margin-left: 22%;">PRINT INDOOR</span>
-                                <span style="font-size: 25px; margin-left: 10%;">CETAK OFFSET</span>
-                                <span style="font-size: 25px; margin-left: 35%;">PRINT A3+</span>
-                                <span style="font-size: 25px; margin-left: 43%;">MERCHANDISE</span>
-                                <span style="font-size: 25px;">
+                                <span style="font-size: 25px;" data-aos="fade-right" data-aos-delay="400">PRINT OUTDOOR</span>
+                                <span style="font-size: 25px; margin-left: 22%;" data-aos="fade-right" data-aos-delay="700">PRINT INDOOR</span>
+                                <span style="font-size: 25px; margin-left: 10%;" data-aos="fade-right" data-aos-delay="1000">CETAK OFFSET</span>
+                                <span style="font-size: 25px; margin-left: 35%;" data-aos="fade-right" data-aos-delay="1300">PRINT A3+</span>
+                                <span style="font-size: 25px; margin-left: 43%;" data-aos="fade-right" data-aos-delay="1600">MERCHANDISE</span>
+                                <span style="font-size: 25px;" data-aos="fade-right" data-aos-delay="1900">
                                     <a href="http://wrappingtroops.com" style="color: white">
                                         VINYL APPLICATOR
                                     </a>

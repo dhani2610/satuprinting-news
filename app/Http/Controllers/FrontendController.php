@@ -75,7 +75,7 @@ class FrontendController extends Controller
         return view('landing.home.detail',$data);
     }
 
-    
+
     public function category(Request $request){
 
           // Ambil data dari database
@@ -83,7 +83,7 @@ class FrontendController extends Controller
           ->where('status', 1)
           ->orderBy('created_at', 'desc')
           ->get();
-  
+
           // Urutan kategori yang diinginkan
           $order = [
               "Cetak Indoor",
@@ -98,10 +98,10 @@ class FrontendController extends Controller
               "Event Both",
               "Pasang Stiker"
           ];
-  
+
           // Ubah collection menjadi array untuk bisa diurutkan
           $categoriesArray = $categories->toArray();
-  
+
           // Urutkan berdasarkan urutan kategori yang diinginkan
           usort($categoriesArray, function ($a, $b) use ($order) {
               return array_search($a['category'], $order) - array_search($b['category'], $order);
@@ -128,7 +128,7 @@ class FrontendController extends Controller
     //         5 => 'Cetak Indoor',
     //         3 => 'Cetak Outdoor'
     //     ];
-    
+
     //     $services = [
     //         // Category 1: CETAK A3+
     //         // 1 => [
@@ -168,12 +168,12 @@ class FrontendController extends Controller
     //             ['service' => 'Backlite Korea', 'price' => 50000],
     //         ]
     //     ];
-    
+
     //     // Fill empty categories (4 to 10) with random services
     //     $randomServices = ['Layanan A', 'Layanan B', 'Layanan C', 'Layanan D', 'Layanan E'];
     //     $randomPhotos = ['asdjsajdasnjnsajn.webp', '1727591493.jpeg', '1727591122.jpeg'];
-        
-        
+
+
     //     // for ($i = 4; $i <= 10; $i++) {
     //     //     for ($j = 0; $j < 10; $j++) {
     //     //         $services[$i][] = [
@@ -197,7 +197,7 @@ class FrontendController extends Controller
     //             ];
     //         }
     //     }
-    
+
     //     // return response()->json($finalServices);
 
     //     // // Save the services to the database
@@ -236,13 +236,13 @@ class FrontendController extends Controller
     //             ]);
     //         }
     //     }
-        
+
     //     // Return response with the created services
     //     return response()->json($finalServices);
     // }
 
     public function generate(){
-        
+
         // $randomPhotos = ['asdjsajdasnjnsajn.webp', '1727591493.jpeg', '1727591122.jpeg'];
 
         // for ($i = 0; $i < 10; $i++) {
@@ -262,5 +262,5 @@ class FrontendController extends Controller
             $pd->save();
         }
     }
-    
+
 }

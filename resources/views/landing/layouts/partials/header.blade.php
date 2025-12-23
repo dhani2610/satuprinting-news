@@ -100,7 +100,7 @@
             <div class="social-links d-flex responsive-social-links">
                 <a href="https://wa.me/6282210008380" target="_blank"><i style="font-size: 25px !important;"
                         class="bi bi-whatsapp"></i></a>
-                <a href="https://www.tiktok.com/@satu.printing?_t=8sEIq5opyTg&_r=1" target="_blank"><i
+                <a href="https://www.tiktok.com/@satuprinting?_t=8sEIq5opyTg&_r=1" target="_blank"><i
                         style="font-size: 25px !important;" class="bi bi-tiktok"></i></a>
                 <a href="#" target="_blank"><i style="font-size: 25px !important;" class="bi bi-facebook"></i></a>
                 <a href="https://www.instagram.com/satuprinting.id?igsh=dmxlczlyamlyMWg1" target="_blank"><i

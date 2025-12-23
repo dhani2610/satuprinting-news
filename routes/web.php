@@ -37,12 +37,12 @@ Route::group(['prefix' => 'admin'], function () {
     Route::group(['prefix' => 'support'], function () {
         Route::get('/', 'Backend\SupportController@index')->name('support');
     });
-    
+
     Route::group(['prefix' => 'setting'], function () {
         Route::get('/', 'Backend\SettingController@index')->name('setting');
         Route::post('/store', 'Backend\SettingController@store')->name('setting.store');
     });
-    
+
     Route::get('/', 'Backend\DashboardController@index')->name('admin.dashboard');
     Route::resource('roles', 'Backend\RolesController', ['names' => 'admin.roles']);
     Route::resource('users', 'Backend\UsersController', ['names' => 'admin.users']);
@@ -148,7 +148,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('print/{id}', 'Backend\AssignmentController@print')->name('assignment.print');
     });
 
-    // TRANSAKTION 
+    // TRANSAKTION
     Route::post('/getCustomerDetails', 'Backend\QuotationController@getCustomerDetails')->name('getCustomerDetails');
     Route::post('/getProjectByCustomer/{id}', 'Backend\ActivityController@getProjectByCustomer')->name('getProjectByCustomer');
     Route::get('/getInvoice', 'Backend\InvoiceController@getInvoice')->name('getInvoice');
@@ -240,7 +240,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::post('update', 'Backend\InvoiceController@updatePayment')->name('payment.update');
         Route::get('destroy/{id}', 'Backend\InvoiceController@destroyPayment')->name('payment.destroy');
     });
-  
+
     Route::group(['prefix' => 'event'], function () {
         Route::get('/get-all-event', 'Backend\EventController@getAllEvent')->name('get-all-event');
         Route::get('/get-event/{id}', 'Backend\EventController@getEvent')->name('get-event');
@@ -255,14 +255,14 @@ Route::group(['prefix' => 'admin'], function () {
         Route::post('/store', 'Backend\AttendanceController@store')->name('attendance.store');
         Route::get('/team/rekap/{id}', 'Backend\AttendanceController@rekapByUser')->name('attendance.team.rekap');
     });
- 
+
     Route::group(['prefix' => 'setting-attendance'], function () {
         Route::get('/', 'Backend\AttendanceController@index')->name('setting-attendance');
         Route::post('/store', 'Backend\AttendanceController@store')->name('setting-attendance.store');
     });
- 
-  
-  
+
+
+
 
     // Login Routes
     Route::get('/login', 'Backend\Auth\LoginController@showLoginForm')->name('admin.login');

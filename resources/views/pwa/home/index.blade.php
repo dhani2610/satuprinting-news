@@ -900,7 +900,7 @@
                     <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">&times;</button>
 
                     <div class="col-sm-12 data-view" style="padding:0px; margin-bottom: 10px;">
-                       
+
                         <img src="{{ asset('assets/img/banner_popup/' . $setting->banner_popup) }}" alt="banner" style="" />
 
                     </div>

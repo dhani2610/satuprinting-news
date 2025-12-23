@@ -1,5 +1,11 @@
 /node_modules
 /public/hot
+/public/assets/img/klien
+/public/assets/img/Portofolio
+/public/assets/img/logo
+/public/assets/img/mesin
+/public/assets/img/product
+/public/assets/img/promo
 /public/storage
 /storage/*.key
 /vendor
