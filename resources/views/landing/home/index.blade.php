@@ -1165,7 +1165,7 @@
 
     <script>
         var swiper = new Swiper(".slide-content", {
-            slidesPerView: 6,
+            slidesPerView: 4,
             spaceBetween: 10,
             loop: false,
             centerSlide: 'true',
@@ -1189,7 +1189,7 @@
                     slidesPerView: 2,
                 },
                 950: {
-                    slidesPerView: 6,
+                    slidesPerView: 4,
                 },
             },
         });
