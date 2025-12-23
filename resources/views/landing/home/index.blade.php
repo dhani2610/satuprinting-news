@@ -1036,7 +1036,7 @@
 
 
         <!-- Stats Section -->
-        <section id="stats" class="stats section" style="background: black; padding: 40px 0;">
+        {{-- <section id="stats" class="stats section" style="background: black; padding: 40px 0;">
             <div class="container" data-aos="fade-up" data-aos-delay="100">
                 <div class="row align-items-center">
                     <!-- Kiri -->
@@ -1064,7 +1064,34 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> --}}
+        <section id="stats" class="stats section" style="background: black; padding: 40px 0;">
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row d-flex">
+
+            <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-left">
+                <h1 style="color: #F7971E; font-weight: bold; font-size: 32px; padding: 0;">
+                    MESIN KAMI
+                </h1>
+
+                @foreach ($mesin as $m)
+                    <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                        <div style="width: 12px; height: 12px; background-color: #F7971E; border-radius: 50%; margin-right: 15px; flex-shrink: 0;">
+                        </div>
+                        <span style="color: white; font-size: 20px;">{{ $m->title }}</span>
+                    </div>
+                @endforeach
+            </div>
+
+            <div class="col-lg-6 text-center" style="padding: 0;"> <img src="{{ asset('assets/img/mesin/' . $set->mesin) }}"
+                     data-aos="fade-right"
+                     class="img-fluid"
+                     alt="Mesin"
+                     style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+            </div>
+        </div>
+    </div>
+</section>
 
 
 
