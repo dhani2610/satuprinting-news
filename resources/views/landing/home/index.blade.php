@@ -443,7 +443,7 @@
 
 
         .hero .carousel {
-            min-height: 66vh !important;
+            min-height: 76vh !important;
         }
 
         .mobile-sider {
@@ -735,7 +735,7 @@
                                 <span style="font-size: 99px; margin-left: 43%;">MERCHANDISE</span>
                                 <span style="font-size: 99px;">VINYL APPLICATOR</span>
                             </div> --}}
-                            <div class="slider-text aos-init aos-animate" data-aos="fade-right"  style="top: 1%;left: 13%;font-family: 'Bebas Neue', sans-serif!important;line-height: 1;">
+                            <div class="slider-text aos-init aos-animate" data-aos="fade-right"  style="top: 4%;left: 13%;font-family: 'Bebas Neue', sans-serif!important;line-height: 1;">
                                 <span style="font-size: 94px;/* margin-left: 14%; */"  data-aos="fade-right" data-aos-delay="400">PRINT OUTDOOR</span>
                                 <span style="font-size: 76px;margin-left: 17%;"  data-aos="fade-right" data-aos-delay="700">PRINT INDOOR</span>
                                 <span style="font-size: 76px;margin-left: 10%;"  data-aos="fade-right" data-aos-delay="1000">CETAK OFFSET</span>
@@ -933,7 +933,10 @@
                                 @if ($cat['category'] == 'Pasang Stiker')
                                     <a href="https://wrappingtroops.com" target="_blank" class="stretched-link"
                                         style="color: black">
-                                    @else
+                                @elseif($cat['category'] == 'Advertising')
+                                    <a href="https://advertisingtroops.com" target="_blank" class="stretched-link"
+                                        style="color: black">
+                                @else
                                         <a href="{{ route('category-landing') }}?category={{ $cat['id'] }}"
                                             class="stretched-link" style="color: black">
                                 @endif

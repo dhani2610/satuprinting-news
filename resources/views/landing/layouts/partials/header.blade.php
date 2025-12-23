@@ -31,7 +31,7 @@
         }
 
         .header .logo img {
-            max-height: 28px !important;
+            max-height: 36px !important;
             margin-right: 8px;
         }
     }
@@ -57,7 +57,7 @@
     }
 
     .header .logo img {
-        max-height: 28px !important;
+        max-height: 36px !important;
         margin-right: 8px;
     }
 
