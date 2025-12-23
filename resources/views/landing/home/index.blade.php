@@ -934,7 +934,7 @@
                                     <a href="https://wrappingtroops.com" target="_blank" class="stretched-link"
                                         style="color: black">
                                 @elseif($cat['category'] == 'Advertising')
-                                    <a href="https://advertisingtroops.com" target="_blank" class="stretched-link"
+                                    <a href="http://iklanjalan.com" target="_blank" class="stretched-link"
                                         style="color: black">
                                 @else
                                         <a href="{{ route('category-landing') }}?category={{ $cat['id'] }}"
